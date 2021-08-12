@@ -1,0 +1,27 @@
+INV1 cell simulation
+.include "../lib/prelude.spice"
+
+* include target cell model
+.include "./sky130_fd_sc_hd/cells/inv/sky130_fd_sc_hd__inv_1.spice"
+
+* create target cell
+xcell A Vgnd Vgnd Vdd Vdd Y sky130_fd_sc_hd__inv_1
+
+* set gnd and power
+Vgnd Vgnd 0 0
+Vdd Vdd Vgnd 1.8
+
+* create test pulses
+Va A Vgnd pulse(0 1.8 1n 10p 10p 1n 2n)
+
+* setup the transient analysis
+.tran 10p 3n 0
+
+.control
+run
+
+hardcopy plots/inv_1.ps A Y
+shell open plots/inv_1.ps
+
+exit
+.endc
