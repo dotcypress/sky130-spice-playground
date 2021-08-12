@@ -6,7 +6,7 @@ This repo contains extracted primitive models, spice models and standard cells f
 
 `ngspice simulations/%sim_name%.spice`
 
-### Example: 
+### Examples: 
 * `ngspice simulations/inv_1.spice`
 * `ngspice simulations/nand_2.spice`
 

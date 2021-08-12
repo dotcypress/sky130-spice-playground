@@ -1,5 +1,5 @@
 NAND2 cell simulation
-.include "../lib/prelude.spice"
+.include "./lib/prelude.spice"
 
 * include target cell model
 .include "./sky130_fd_sc_hd/cells/nand2/sky130_fd_sc_hd__nand2_8.spice"
